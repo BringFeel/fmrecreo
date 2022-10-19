@@ -1,9 +1,41 @@
-/* ---- reset ---- */
+@font-face {
+	font-family: RadioClassic;
+	src: url(https://fmrecreo.bringfeel.com/assets/css/RadioClassic.otf);
+  }
 
 body {
   margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
-  background-image: url("https://fmrecreo.bringfeel.com/obs/bgemp.png")
+  background: rgb(22, 22, 22);
+}
+
+h2 {
+  font-size: 16em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: RadioClassic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: flow 8s ease-in-out infinite;
+    background: linear-gradient(-60deg, #FF0000, #FF7F00, #F67280, #3bd64d, #0000FF, #4B0082, #9400D3, #e44c65);
+    background-size: 200%;
+    padding-left: 1rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes flow {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
 canvas {
@@ -44,18 +76,4 @@ canvas {
 
 .js-count-particles{
   font-size: 1.1em;
-}
-
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-}
-
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-
-.count-particles{
-  border-radius: 0 0 3px 3px;
 }
