@@ -4,9 +4,6 @@ body {
   margin: 0;
   font:normal 75% Arial, Helvetica, sans-serif;
   background-image: url("https://fmrecreo.bringfeel.com/obs/bgemp.png")
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 canvas {
