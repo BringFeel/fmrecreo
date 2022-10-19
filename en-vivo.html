@@ -65,16 +65,36 @@
 
 		<!-- Scripts -->
 		    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+			<script type="text/javascript">
+    var options = {
+      channel: "monstercat", // TODO: Change this to the streams username you want to embed
+      width: 640,
+      height: 360,
+    };
+    var player = new Twitch.Player("twitch", options);
 
-	                        <script type="text/javascript">
-  							    new Twitch.Embed("twitch-embed", {
-  							      width: 854,
-  							      height: 480,
- 							       channel: "monstercat",
+    player.addEventListener(Twitch.Player.READY, initiate)
 
-		                        parent: ["fmrecreo.bringfeel.com"]
-	                            });
-                            </script>
+    function initiate() {
+      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.removeEventListener(Twitch.Player.READY, initiate);
+    }
+
+    function handleOnline() {
+      document.getElementById("twitch").classList.remove('hide');
+      player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.setMuted(false);
+    }
+
+    function handleOffline() {
+      document.getElementById("twitch").classList.add('hide');
+      player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+      player.setMuted(true);
+    }
+  </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
