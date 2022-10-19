@@ -39,7 +39,12 @@
 
 						<!-- Content -->
 							<section id="content">
-								<div id="twitch-embed" style="text-align: center"></div>
+								<iframe id="inlineFrameExample"
+ 							   title="Inline Frame Example"
+ 							   width="100%"
+  							  height="1200"
+  							  src="https://player.twitch.tv/?channel=monstercat&enableExtensions=true&muted=false&parent=twitch.tv&player=popout&quality=360p30&volume=0.07">
+							</iframe>
 							</section>
 							<section id="problema">
 							<h3 style="text-align: center; padding: 5%;">Problemas con la Transmisión?</h3>
@@ -64,37 +69,6 @@
 		</div>
 
 		<!-- Scripts -->
-		    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-			<script type="text/javascript">
-    var options = {
-      channel: "monstercat", // TODO: Change this to the streams username you want to embed
-      width: 640,
-      height: 360,
-    };
-    var player = new Twitch.Player("twitch", options);
-
-    player.addEventListener(Twitch.Player.READY, initiate)
-
-    function initiate() {
-      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.removeEventListener(Twitch.Player.READY, initiate);
-    }
-
-    function handleOnline() {
-      document.getElementById("twitch").classList.remove('hide');
-      player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.setMuted(false);
-    }
-
-    function handleOffline() {
-      document.getElementById("twitch").classList.add('hide');
-      player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
-      player.addEventListener(Twitch.Player.ONLINE, handleOnline);
-      player.setMuted(true);
-    }
-  </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
