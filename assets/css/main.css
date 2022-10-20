@@ -4130,3 +4130,19 @@ input, select, textarea {
 			}
 
 		}
+
+		::-webkit-scrollbar {
+		  width: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+		  background: #3C5367; 
+		}
+
+		::-webkit-scrollbar-thumb {
+		  background: #e44c65; 
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+ 		 background: #852b3a; 
+		}
