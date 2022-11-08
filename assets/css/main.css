@@ -3213,6 +3213,10 @@ input, select, textarea {
 			background: #e44c65;
 		}
 
+		.wrapper.style69 {
+			background: #4c56e4;
+		}
+
 			.wrapper.style2 input[type="text"]:focus,
 			.wrapper.style2 input[type="password"]:focus,
 			.wrapper.style2 input[type="email"]:focus,
@@ -4145,4 +4149,8 @@ input, select, textarea {
 
 		::-webkit-scrollbar-thumb:hover {
  		 background: #852b3a; 
+		}
+
+		#dias {
+			font-size: 25px;
 		}
