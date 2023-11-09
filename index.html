@@ -72,15 +72,9 @@
 				<section id="last-streams" class="wrapper style69 special fade">
 					<div class="container">
 						<header class="major">
-							<h2>Ultimas Transmisiones en EEA N1 "Lola Mora"</h2>
-							<p>Escuela de Educación Artística N1 "Lola Mora"</p>
+							<h2>Ultima Transmisión!</h2>
 						</header>
-						<p id="dias">Parte 1</p>
-						<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/uQ5-ciYGs4w" title="FM Recreo - Parte 1 - Escuela de Educación Artística N1 Lola Mora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<p id="dias">Parte 2</p>
-						<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/drNTER4OzoA" title="FM Recreo - Parte 2 - Escuela de Educación Artística N1 Lola Mora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						<p id="dias">Parte 3</p>
-						<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/iXiMePVo1vI" title="FM Recreo - Parte 3 - Escuela de Educación Artística N1 Lola Mora" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                <iframe id="youtube_video" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</section>
 
@@ -141,6 +135,15 @@
 
 		<!-- Scripts -->
 			<script src="https://www.fmrecreo.com.ar/assets/js/jquery.min.js"></script>
+		        <script type="text/javascript">
+     		           var channelID = "UCHKuyQu6_SPddf-qCxk5RpA";
+		           var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
+		           $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL)+channelID, function(data) {
+ 		           var link = data.items[0].link;
+ 		           var id = link.substr(link.indexOf("=")+1);
+		        $("#youtube_video").attr("src","https://www.youtube-nocookie.com/embed/"+id + "?controls=0&showinfo=0&rel=0");
+		        });
+ 		        </script>
 	                <script src="https://bringfeel.com.ar/assets/js/year.js"></script>
 			<script src="https://www.fmrecreo.com.ar/assets/js/jquery.scrolly.min.js"></script>
 			<script src="https://www.fmrecreo.com.ar/assets/js/jquery.dropotron.min.js"></script>
